@@ -1,11 +1,11 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-// const path = require("path");
+const path = require("path");
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
-// const db = require("./models/index.js");
+const db = require("./models/index.js");
 const apiRoutes = require("./routes/apiRoutes.js")
 const htmlRoutes = require("./routes/htmlRoutes.js");
 const app = express();
@@ -17,14 +17,14 @@ app.use(express.static("public"));
 app.use(apiRoutes);
 app.use(htmlRoutes);
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout"
-const options =  {
+var MONGODB_URI = process.env.MONGODB_URL || "mongodb://localhost/dbName";
+const options = {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false,
   family: 4 // Use IPv4, skip trying IPv6
 };
-mongoose.connect(MONGODB_URI, options);
+mongoose.connect(MONGODB_URI,options)
 
 
 
