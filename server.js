@@ -17,7 +17,7 @@ app.use(express.static("public"));
 app.use(apiRoutes);
 app.use(htmlRoutes);
 
-var MONGODB_URI = process.env.MONGODB_URL || "mongodb://localhost/dbName";
+var MONGODB_URI = process.env.MONGODB_URL || "mongodb://heroku_z7f994f0:rfcg3qo7e3fbbq6pdbpibtcbtf@ds231749.mlab.com:31749/heroku_z7f994f0";
 const options = {
   useNewUrlParser: true,
   useCreateIndex: true,
