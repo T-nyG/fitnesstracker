@@ -17,7 +17,7 @@ app.use(express.static("public"));
 app.use(apiRoutes);
 app.use(htmlRoutes);
 
-var MONGODB_URI = process.env.MONGODB_URL || "mongodb://heroku_wzrhh0c5:fl1cpo3mlua33pnol4dirkevd4@ds017544.mlab.com:17544/heroku_wzrhh0c5";
+var MONGODB_URI = process.env.MONGODB_URL || "mongo ds017544.mlab.com:17544/heroku_wzrhh0c5 -u <dbuser> -p <dbpassword>";
 const options = {
   useNewUrlParser: true,
   useCreateIndex: true,
